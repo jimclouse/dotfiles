@@ -1,0 +1,5 @@
+alias ls='ls -lah'
+alias h='history'
+alias ..='cd ..'
+alias netrestart='sudo ifconfig en1 down; sudo ifconfig en0 down; sudo ifconfig en0 up; sudo ifconfig en1 up;'
+alias dev='cd /Users/jclouse/Development'
