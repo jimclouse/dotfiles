@@ -1,0 +1,28 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Better Bookmarks",
+		"Better CoffeeScript",
+		"CJSX Syntax",
+		"CoffeeAngular Syntax",
+		"Color Highlighter",
+		"ColorPicker",
+		"Compare Side-By-Side",
+		"DiffView",
+		"ESLint",
+		"Git",
+		"GitGutter",
+		"JSX",
+		"LESS",
+		"Package Control",
+		"Pretty JSON",
+		"React Templates",
+		"SideBarEnhancements",
+		"SublimeLinter-coffeelint",
+		"SyncedSideBar"
+	]
+}
