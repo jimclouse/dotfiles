@@ -1,0 +1,16 @@
+# bash function to look for a package.json, interrogate it
+# and set the node verison based on the engine specified
+
+function nvmit() {
+    packageJson='./package.json'
+    if [ -f $packageJson ]; then
+        result=$(jq --raw-output '.engines.node' $packageJson)
+        if [ ! -z "$result" ]; then
+            nvm install $result
+        else
+            echo "no engines.node section found in package.json"
+        fi
+    else
+        echo "no package.json found"
+    fi
+}
