@@ -1,16 +1,18 @@
+#!/bin/bash
 # bash function to look for a package.json, interrogate it
 # and set the node verison based on the engine specified
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-function nvmit() {
-    packageJson='./package.json'
-    if [ -f $packageJson ]; then
-        result=$(jq --raw-output '.engines.node' $packageJson)
-        if [ ! -z "$result" ]; then
-            nvm install $result
-        else
-            echo "no engines.node section found in package.json"
-        fi
+packageJson='./package.json'
+if [ -f $packageJson ]; then
+    result=$(jq --raw-output '.engines.node' $packageJson)
+    if [ ! -z "$result" ]; then
+        nvm install $result
     else
-        echo "no package.json found"
+        echo "no engines.node section found in package.json"
     fi
-}
+else
+    echo "no package.json found"
+fi
+
